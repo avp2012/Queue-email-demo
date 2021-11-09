@@ -12,8 +12,9 @@
           </div>
         @endif
         <div class="row">
-          <div class="col-10"></div>
-          <div class="col-2 mb-2 text-right">
+          <div class="col-7"></div>
+          <div class="col-5 mb-2 text-right">
+            <button type="button" class="btn btn-danger" onclick="MultipleDelete('multiple-posts-delete','posts_table')"><i class="fas fa-trash"></i>&nbsp;&nbsp;Delete Selected</button>
             <a href="{{ route('posts.create') }}" class="btn btn-info"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;Create Post</a>
           </div>
         </div>
@@ -28,8 +29,13 @@
                 <table id="posts_table" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th></th>
-                    <th>Sr. No.</th>
+                    <th class="select_all">
+                      <label class="container_chk ">
+                        <input type="checkbox" >
+                        <span class="checkmark"></span>
+                      </label>
+                    </th>
+                    <th>ID</th>
                     <th>Title</th>
                     <th>Category</th>
                     <th>Image</th>
@@ -56,4 +62,10 @@
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
   </aside>
+@section('script')
+  <script type="text/javascript">
+    var base_url = "{{ url('/') }}";
+    var csrftoken = "{{ csrf_token() }}";
+  </script>
+@endsection
 @endsection

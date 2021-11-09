@@ -38,12 +38,20 @@
                         </select>
                         <span class="text-danger">{{ $errors->first('category') }}</span>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-4">
                         <label for="file">Image</label>
-                        <div class="custom-file">
-                          <input type="file" name="image" class="custom-file-input" id="customFile">
-                          <label class="custom-file-label" for="customFile">Choose file</label>
-                        </div>
+                        <input type="file" name="image" class="form-control" id="customFile" onchange="readURL(this);">
+                      </div>
+                      <div class="col-md-2">
+                        <label for=""></label>
+                        @if($post->image != null)
+                          <input type="hidden" id="post_img" name="post_img" value="{{ $post->image }}">
+                          <div class="remove-img">
+                            <img src="{{ asset('backend/images/posts/'.$post->image) }}" width="40%">
+                            <button class="btn btn-danger ml-5 btn-sm" id="remove_post_img"><i class="fas fa-trash"></i></button>
+                          </div>
+                        @endif
+                        <div id="show_img"></div>
                       </div>
                     </div>
                   </div>

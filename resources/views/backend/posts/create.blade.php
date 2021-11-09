@@ -37,12 +37,13 @@
                         </select>
                         <span class="text-danger">{{ $errors->first('category') }}</span>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-4">
                         <label for="file">Image</label>
-                        <div class="custom-file">
-                          <input type="file" name="image" class="custom-file-input" id="customFile">
-                          <label class="custom-file-label" for="customFile">Choose file</label>
-                        </div>
+                        <input type="file" name="image" class="form-control" id="customFile" onchange="readURL(this);">
+                      </div>
+                      <div class="col-md-2">
+                        <label for=""></label>
+                        <div id="show_img"></div>
                       </div>
                     </div>
                   </div>

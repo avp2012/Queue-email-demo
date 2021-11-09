@@ -21,6 +21,7 @@ Route::group(['prefix' => 'admin'], function () {
 	Auth::routes();
 	Route::get('dashboard', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard');
 	Route::resource('posts', 'App\Http\Controllers\PostController');
+	Route::post('multiple-posts-delete', [App\Http\Controllers\PostController::class, 'multiplePostsDelete']);
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

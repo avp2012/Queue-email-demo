@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 08, 2021 at 01:26 PM
+-- Generation Time: Nov 09, 2021 at 01:24 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.4.9
 
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `migrations`
@@ -82,7 +82,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (5, '2021_11_08_090050_create_jobs_table', 2),
-(6, '2021_11_08_092639_create_posts_table', 3);
+(6, '2021_11_08_092639_create_posts_table', 3),
+(7, '2021_11_09_071845_add_mobile_no_column_in_users_table', 4);
 
 -- --------------------------------------------------------
 
@@ -135,16 +136,15 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `posts`
 --
 
 INSERT INTO `posts` (`id`, `title`, `category`, `content`, `image`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'gfg', 'environment', 'dfgdfgfd', NULL, '2021-11-08 06:47:51', '2021-11-08 06:47:51', NULL),
-(2, 'Demo1', 'animals', 'fgfdgdfg dfgthfh jghjhgj', NULL, '2021-11-08 06:49:01', '2021-11-08 07:48:27', NULL),
-(5, 'fghgfh fgh', 'celebrity', 'g hfghgfhgf', '1636375815.png', '2021-11-08 07:20:15', '2021-11-08 07:20:15', NULL);
+(7, 'Demo', 'celebrity', 'demo post', '1636439722.png', '2021-11-09 01:05:22', '2021-11-09 01:38:04', '2021-11-09 01:38:04'),
+(8, 'Test', 'environment', 'Test post', '1636440009.png', '2021-11-09 01:10:09', '2021-11-09 01:38:04', '2021-11-09 01:38:04');
 
 -- --------------------------------------------------------
 
@@ -157,6 +157,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mobile_no` varchar(21) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -169,8 +170,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@admin.com', NULL, '$2y$10$/VFUBL/WWC./xBo73ifcVeT8/05Kx2/Jiqnrv4c72jCRWluleemNq', NULL, '2021-11-08 04:04:56', '2021-11-08 04:04:56');
+INSERT INTO `users` (`id`, `name`, `email`, `mobile_no`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'admin@admin.com', NULL, NULL, '$2y$10$/VFUBL/WWC./xBo73ifcVeT8/05Kx2/Jiqnrv4c72jCRWluleemNq', 'aaYWry6hKrdIjn4wE3pxDTU5CG21AuLjv8L7OFIl6A6vxTiVkJXogEIXQREe', '2021-11-08 04:04:56', '2021-11-08 04:04:56');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

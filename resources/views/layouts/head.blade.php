@@ -8,6 +8,10 @@
 <link rel="stylesheet" href="{{ asset('backend/css/responsive.bootstrap4.min.css') }}">
 
 <link rel="stylesheet" href="{{ asset('backend/css/select2.min.css') }}">
+
+<link rel="stylesheet" href="{{ asset('backend/css/bootstrap-4.min.css') }}">
 <!-- Theme style -->
 <link rel="stylesheet" href="{{ asset('backend/css/adminlte.min.css') }}">
 <link rel="stylesheet" href="{{ asset('backend/css/OverlayScrollbars.min.css') }}">
+
+<link rel="stylesheet" href="{{ asset('backend/css/custom-style.css') }}">

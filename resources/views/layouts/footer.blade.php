@@ -19,6 +19,8 @@
 <script src="{{ asset('backend/js/select2.min.js') }}"></script>
 
 <script src="{{ asset('backend/js/jquery.overlayScrollbars.min.js') }}"></script>
+
+<script src="{{ asset('backend/js/sweetalert2.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('backend/js/adminlte.min.js') }}"></script>
 
